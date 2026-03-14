@@ -37,7 +37,7 @@
         /// <param name="student">
         /// Instance of <c>IStudent</c>.
         /// </param>
-        void AddStudents(IStudent student);
+        void AddStudent(IStudent student);
 
         /// <summary>
         /// Adds session to database.
