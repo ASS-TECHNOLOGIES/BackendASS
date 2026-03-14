@@ -1,4 +1,7 @@
 
+using StudyASS.Interfaces;
+using StudyASS.Parsers;
+
 namespace StudyASS
 {
     public class Program
@@ -12,6 +15,9 @@ namespace StudyASS
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            // Register extra objects
+            builder.Services.AddSingleton<IDatabaseParser, SqlParser>();
 
             var app = builder.Build();
 
