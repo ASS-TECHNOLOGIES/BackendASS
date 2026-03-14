@@ -1,5 +1,4 @@
-#@StudyASS_HostAddress = http://localhost:5136
-@StudyASS_HostAddress = http://localhost:32770
+@StudyASS_HostAddress = http://localhost:5136
 
 GET {{StudyASS_HostAddress}}/weatherforecast/
 Accept: application/json

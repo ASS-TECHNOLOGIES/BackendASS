@@ -1,16 +1,16 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using StudyASS.Interfaces;
+using StudyASS.TODO;
 
-namespace StudyASS.TODO
+namespace StudyASS.Parsers
 {
     public class SqlParser : IDatabaseParser
     {
         private MySqlConnection _connection;
-        private IStudentFactory _studentFactory;
-        public SqlParser(IStudentFactory studentFactory)
-        {
-            _studentFactory = studentFactory;
 
+        public SqlParser()
+        {
             string connectionStr = "server=127.0.0.1;uid=root;pwd=Chocostrawberry1;database=StudyAssDB";
             _connection = new MySqlConnection(connectionStr);
 
@@ -39,7 +39,6 @@ namespace StudyASS.TODO
             }
 
             return new List<IStudent>();
-
         }
 
         public List<IStudySession> GetSessions()
@@ -64,7 +63,17 @@ namespace StudyASS.TODO
 
         public void AddRegistration(IStudentRegistration registration)
         {
-            throw new NotImplementedException();
+            foreach (string module in registration.Modules)
+            {
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = _connection;
+
+                command.CommandText = @"INSERT INTO Registration (EMAIL, MODULE) VALUES (@email, @module);";
+                command.Parameters.AddWithValue("@email", registration.StudentEmail);
+                command.Parameters.AddWithValue("@module", module);
+
+                command.ExecuteNonQuery();
+            }
         }
 
         public void RemoveRegistration(IStudentRegistration registration)
