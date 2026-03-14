@@ -37,7 +37,7 @@ namespace StudyASS.Models
             get { return _course; }
         }
 
-        /// <inheritdoc/> 
+        /// <inheritdoc/>
         public List<string> Modules
         {
             get { return _modules; }

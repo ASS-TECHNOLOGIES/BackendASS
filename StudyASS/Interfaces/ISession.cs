@@ -5,7 +5,7 @@
     /// </summary>
     public interface ISession
     {
-        #region public Properties
+        #region Public Properties
 
         /// <summary>
         /// Date and time of session.
@@ -20,7 +20,7 @@
         /// <summary>
         /// Student attendees of session.
         /// </summary>
-        List<IStudent> attendees { get; }
+        List<IStudent> Attendees { get; }
 
         /// <summary>
         /// Module focus of session.
