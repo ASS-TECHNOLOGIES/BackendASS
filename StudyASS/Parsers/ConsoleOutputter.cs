@@ -1,33 +1,13 @@
 ﻿using StudyASS.Interfaces;
-using StudyASS.TODO;
 
 namespace StudyASS.Parsers
 {
     public class ConsoleOutputter : IDatabaseParser
     {
-        public List<IStudent> GetStudents()
+        public IEnumerable<IStudySession> GetStudySessions(string studentEmail)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<IStudySession> GetSessions()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<IStudentRegistration> GetRegistrations()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddStudent(IStudent student)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddSession(IStudySession session)
-        {
-            throw new NotImplementedException();
+            Console.WriteLine($"Student Email: {studentEmail}\n");
+            return null;
         }
 
         public void AddRegistration(IStudentRegistration registration)
@@ -38,11 +18,6 @@ namespace StudyASS.Parsers
                 Console.WriteLine($"\t{module}");
             }
             Console.WriteLine();
-        }       
-
-        public void RemoveRegistration(IStudentRegistration registration)
-        {
-            throw new NotImplementedException();
         }
     }
 }

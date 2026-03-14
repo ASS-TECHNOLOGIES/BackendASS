@@ -15,16 +15,7 @@ Content-Type: application/json
 
 ###
 
-GET {{StudyASS_HostAddress}}/students/
+GET {{StudyASS_HostAddress}}/StudySession/
 Accept: application/json
-
-GET {{StudyASS_HostAddress}}/sessions/
-Accept: application/json
-
-GET {{StudyASS_HostAddress}}/registrations/
-Accept: application/json
-
-POST {{StudyASS_HostAddress}}/arrange/
-Accept: applicatoin/json
 
 ###

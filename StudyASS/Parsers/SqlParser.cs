@@ -1,19 +1,21 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using StudyASS.Interfaces;
-using StudyASS.TODO;
+using System.Data;
 
 namespace StudyASS.Parsers
 {
     public class SqlParser : IDatabaseParser
     {
         private MySqlConnection _connection;
+        private IStudySessionFactory _studySessionFactory;
 
-        public SqlParser()
+        public SqlParser(IStudySessionFactory studySessionFactory)
         {
+            _studySessionFactory = studySessionFactory;
+
             string connectionStr = "server=127.0.0.1;uid=root;pwd=Chocostrawberry1;database=StudyAssDB";
             _connection = new MySqlConnection(connectionStr);
-
             _connection.Open();
         }
 
@@ -41,24 +43,28 @@ namespace StudyASS.Parsers
             return new List<IStudent>();
         }
 
-        public List<IStudySession> GetSessions()
+        public IEnumerable<IStudySession> GetStudySessions(string studentEmail)
         {
-            throw new NotImplementedException();
-        }
+            List<IStudySession> sessions = new List<IStudySession>();
 
-        public List<IStudentRegistration> GetRegistrations()
-        {
-            throw new NotImplementedException();
-        }
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = _connection;
+            command.CommandText = @"SELECT SESSION_TIME, MODULE, TOPIC FROM Attendance WHERE EMAIL = @studentEmail;";
+            command.Parameters.AddWithValue("@studentEmail", studentEmail);
 
-        public void AddStudent(IStudent student)
-        {
-            throw new NotImplementedException();
-        }
+            using var myReader = command.ExecuteReader();
+            {
+                while (myReader.Read())
+                {
+                    DateTime dateTime = myReader.GetDateTime("SESSION_TIME");
+                    string module = myReader.GetString("MDOULE");
+                    string topic = myReader.GetString("TOPIC");
 
-        public void AddSession(IStudySession session)
-        {
-            throw new NotImplementedException();
+                    sessions.Add(_studySessionFactory.CreateStudySession(dateTime, module, topic));
+                }
+            }
+
+            return sessions;
         }
 
         public void AddRegistration(IStudentRegistration registration)
@@ -74,11 +80,6 @@ namespace StudyASS.Parsers
 
                 command.ExecuteNonQuery();
             }
-        }
-
-        public void RemoveRegistration(IStudentRegistration registration)
-        {
-            throw new NotImplementedException();
         }
     }
 }

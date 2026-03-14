@@ -22,7 +22,7 @@ namespace StudyASS.Controllers
         [HttpPost]
         public void Post([FromBody] StudentRegistration value)
         {
-            Console.WriteLine("POST: /StudentRegistration received.");
+            Console.WriteLine("POST: /RegisterStudent received.");
             _databaseParser.AddRegistration(value);
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace StudyASS.TODO
+﻿namespace StudyASS.Interfaces
 {
     /// <summary>
     /// Provides interface for session students can attend.
@@ -31,7 +31,7 @@
         /// <summary>
         /// Topic of session, relating to Module.
         /// </summary>
-        string ModuleTopic { get; }
+        string Topic { get; }
 
         #endregion
     }

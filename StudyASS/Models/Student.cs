@@ -1,4 +1,6 @@
-﻿namespace StudyASS.TODO
+﻿using StudyASS.Interfaces;
+
+namespace StudyASS.Models
 {
     /// <summary>
     /// Implementation of <c>IStudent</c> interface.
@@ -11,7 +13,6 @@
         private string _email;
         private string _course;
         private List<string> _modules;
-        private List<IStudent> _friends;
 
         #endregion
 
@@ -39,12 +40,6 @@
         public List<string> Modules
         {
             get { return _modules; }
-        }
-
-        /// <inheritdoc/> 
-        public List<IStudent> Friends
-        {
-            get { return _friends; } 
         }
 
         #endregion

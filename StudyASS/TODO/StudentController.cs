@@ -16,11 +16,11 @@ namespace StudyASS.TODO
             _parser = databaseParser;
         }
 
-        // GET: api/<StudentsController>
-        [HttpGet(Name = "GetStudents")]
-        public IEnumerable<IStudent> Get()
-        {
-            return _parser.GetStudents();
-        }
+        //// GET: api/<StudentsController>
+        //[HttpGet(Name = "GetStudents")]
+        //public IEnumerable<IStudent> Get()
+        //{
+        //    return _parser.GetStudents();
+        //}
     }
 }

@@ -1,9 +1,11 @@
-﻿namespace StudyASS.TODO
+﻿using StudyASS.Interfaces;
+
+namespace StudyASS.Models
 {
     /// <summary>
     /// Implemetation of <c>ISession</c> interface.
     /// </summary>
-    public class Session : IStudySession
+    public class StudySession : IStudySession
     {
         #region Private Properties
 
@@ -11,7 +13,21 @@
         private string _location;
         private List<IStudent> _attendees;
         private string _module;
-        private string _moduleTopic;
+        private string _topic;
+
+        #endregion
+
+        #region Constructor
+
+        public StudySession(DateTime dateTime, string module, string topic)
+        {
+            _dateTime = dateTime;
+            _module = module;
+            _topic = topic;
+
+            _location = string.Empty;
+            _attendees = new List<IStudent>();
+        }
 
         #endregion
 
@@ -42,9 +58,9 @@
         }
 
         /// <inheritdoc/>
-        public string ModuleTopic
+        public string Topic
         {
-            get { return _moduleTopic; }
+            get { return _topic; }
         }
 
         #endregion

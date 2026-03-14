@@ -1,4 +1,6 @@
-﻿namespace StudyASS.TODO
+﻿using StudyASS.Interfaces;
+
+namespace StudyASS.TODO
 {
     public interface IStudentFactory
     {

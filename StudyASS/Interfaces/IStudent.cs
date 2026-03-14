@@ -1,4 +1,4 @@
-﻿namespace StudyASS.TODO
+﻿namespace StudyASS.Interfaces
 {
     /// <summary>
     /// Interface for Student.
@@ -26,11 +26,6 @@
         /// List of modules student partakes.
         /// </summary>
         List<string> Modules { get; }
-
-        /// <summary>
-        /// List of students which are friends of this student.
-        /// </summary>
-        List<IStudent> Friends { get; }
 
         #endregion
     }
