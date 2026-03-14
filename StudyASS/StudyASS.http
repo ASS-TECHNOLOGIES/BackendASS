@@ -3,4 +3,19 @@
 GET {{StudyASS_HostAddress}}/weatherforecast/
 Accept: application/json
 
+GET {{StudyASS_HostAddress}}/students/
+Accept: application/json
+
+GET {{StudyASS_HostAddress}}/sessions/
+Accept: application/json
+
+GET {{StudyASS_HostAddress}}/registrations/
+Accept: application/json
+
+POST {{StudyASS_HostAddress}}/register/
+Accept: applicatoin/json
+
+POST {{StudyASS_HostAddress}}/arrange/
+Accept: applicatoin/json
+
 ###
