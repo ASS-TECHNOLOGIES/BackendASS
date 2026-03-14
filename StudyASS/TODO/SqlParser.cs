@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using StudyASS.Interfaces;
 
-namespace StudyASS.Parsers
+namespace StudyASS.TODO
 {
     public class SqlParser : IDatabaseParser
     {
@@ -27,9 +27,14 @@ namespace StudyASS.Parsers
             {
                 while (myReader.Read())
                 {
-                    string name = myReader.GetString("name");
+                    string name = myReader.GetString("NAME");
+                    string email = myReader.GetString("EMAIL");
+                    string course = myReader.GetString("COURSE");
 
-                    //_studentFactory.GetStudent(name);
+                    DateTime availability1 = myReader.GetDateTime("AVAILABILITY1");
+                    DateTime availability2 = myReader.GetDateTime("AVAILABILITY2");
+                    DateTime availability3 = myReader.GetDateTime("AVAILABILITY3");
+                    List<DateTime> availabilities = new List<DateTime> { availability1, availability2, availability3 };
                 }
             }
 
@@ -37,12 +42,12 @@ namespace StudyASS.Parsers
 
         }
 
-        public List<Interfaces.ISession> GetSessions()
+        public List<IStudySession> GetSessions()
         {
             throw new NotImplementedException();
         }
 
-        public List<IRegistration> GetRegistrations()
+        public List<IStudentRegistration> GetRegistrations()
         {
             throw new NotImplementedException();
         }
@@ -52,17 +57,17 @@ namespace StudyASS.Parsers
             throw new NotImplementedException();
         }
 
-        public void AddSession(Interfaces.ISession session)
+        public void AddSession(IStudySession session)
         {
             throw new NotImplementedException();
         }
 
-        public void AddRegistration(IRegistration registration)
+        public void AddRegistration(IStudentRegistration registration)
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveRegistration(IRegistration registration)
+        public void RemoveRegistration(IStudentRegistration registration)
         {
             throw new NotImplementedException();
         }

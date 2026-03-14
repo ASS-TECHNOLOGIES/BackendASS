@@ -1,7 +1,20 @@
-@StudyASS_HostAddress = http://localhost:5136
+#@StudyASS_HostAddress = http://localhost:5136
+@StudyASS_HostAddress = http://localhost:32770
 
 GET {{StudyASS_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+POST {{StudyASS_HostAddress}}/RegisterStudent/
+Content-Type: application/json
+
+{
+    "studentEmail": "atdenton@lancashire.ac.uk",
+    "modules": ["CO3404", "CO2401"]
+}
+
+###
 
 GET {{StudyASS_HostAddress}}/students/
 Accept: application/json
@@ -11,9 +24,6 @@ Accept: application/json
 
 GET {{StudyASS_HostAddress}}/registrations/
 Accept: application/json
-
-POST {{StudyASS_HostAddress}}/register/
-Accept: applicatoin/json
 
 POST {{StudyASS_HostAddress}}/arrange/
 Accept: applicatoin/json

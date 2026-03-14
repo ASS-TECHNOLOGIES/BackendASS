@@ -1,4 +1,6 @@
-﻿namespace StudyASS.Interfaces
+﻿using StudyASS.TODO;
+
+namespace StudyASS.Interfaces
 {
     /// <summary>
     /// Interface for database parser.
@@ -21,7 +23,7 @@
         /// <returns>
         /// Collection of <c>ISession</c>.
         /// </returns>
-        List<ISession> GetSessions();
+        List<IStudySession> GetSessions();
 
         /// <summary>
         /// Gets list of student registrations for sessions from database.
@@ -29,7 +31,7 @@
         /// <returns>
         /// Collection of <c>IRegistration</c>.
         /// </returns>
-        List<IRegistration> GetRegistrations();
+        List<IStudentRegistration> GetRegistrations();
 
         /// <summary>
         /// Adds student to database.
@@ -45,7 +47,7 @@
         /// <param name="session">
         /// Instance of <c>ISession</c>.
         /// </param>
-        void AddSession(ISession session);
+        void AddSession(IStudySession session);
 
         /// <summary>
         /// Adds registration to database.
@@ -53,7 +55,7 @@
         /// <param name="registration">
         /// Instance of <c>IRegistration</c>.
         /// </param>
-        void AddRegistration(IRegistration registration);
+        void AddRegistration(IStudentRegistration registration);
 
         /// <summary>
         /// Removes registration from database.
@@ -61,7 +63,7 @@
         /// <param name="registration">
         /// Instance of <c>IRegistration</c>.
         /// </param>
-        void RemoveRegistration(IRegistration registration);
+        void RemoveRegistration(IStudentRegistration registration);
 
         #endregion
     }

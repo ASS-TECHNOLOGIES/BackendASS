@@ -1,6 +1,4 @@
-﻿using StudyASS.Interfaces;
-
-namespace StudyASS.Models
+﻿namespace StudyASS.TODO
 {
     /// <summary>
     /// Implementation of <c>IStudent</c> interface.

@@ -1,11 +1,9 @@
-﻿using StudyASS.Interfaces;
-
-namespace StudyASS.Models
+﻿namespace StudyASS.TODO
 {
     /// <summary>
     /// Implemetation of <c>ISession</c> interface.
     /// </summary>
-    public class Session : Interfaces.ISession
+    public class Session : IStudySession
     {
         #region Private Properties
 

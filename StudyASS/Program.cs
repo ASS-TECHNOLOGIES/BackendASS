@@ -1,4 +1,3 @@
-
 using StudyASS.Interfaces;
 using StudyASS.Parsers;
 
@@ -17,7 +16,7 @@ namespace StudyASS
             builder.Services.AddOpenApi();
 
             // Register extra objects
-            builder.Services.AddSingleton<IDatabaseParser, SqlParser>();
+            builder.Services.AddSingleton<IDatabaseParser, ConsoleOutputter>();
 
             var app = builder.Build();
 

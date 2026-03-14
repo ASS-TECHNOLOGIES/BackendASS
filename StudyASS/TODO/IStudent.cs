@@ -1,4 +1,4 @@
-﻿namespace StudyASS.Interfaces
+﻿namespace StudyASS.TODO
 {
     /// <summary>
     /// Interface for Student.

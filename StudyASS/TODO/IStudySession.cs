@@ -1,9 +1,9 @@
-﻿namespace StudyASS.Interfaces
+﻿namespace StudyASS.TODO
 {
     /// <summary>
     /// Provides interface for session students can attend.
     /// </summary>
-    public interface ISession
+    public interface IStudySession
     {
         #region Public Properties
 
