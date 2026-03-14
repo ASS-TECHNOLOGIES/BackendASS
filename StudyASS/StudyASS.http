@@ -15,7 +15,7 @@ Content-Type: application/json
 
 ###
 
-GET {{StudyASS_HostAddress}}/StudySession/
+GET {{StudyASS_HostAddress}}/StudySessions/atdenton@lancashire.ac.uk
 Accept: application/json
 
 ###
