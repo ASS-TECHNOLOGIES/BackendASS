@@ -11,8 +11,18 @@ namespace StudyASS.Models
 
         private string _name;
         private string _email;
-        private string _course;
-        private List<string> _modules;
+        private string? _course;
+        private List<string>? _modules;
+
+        #endregion
+
+        #region Constructor
+
+        public Student(string name, string email)
+        {
+            _name = name;
+            _email = email;
+        }
 
         #endregion
 

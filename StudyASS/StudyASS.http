@@ -10,12 +10,17 @@ Content-Type: application/json
 
 {
     "studentEmail": "atdenton@lancashire.ac.uk",
-    "modules": ["CO3404", "CO2401"]
+    "modules": ["CSC101", "CO3404", "CO2401"]
 }
 
 ###
 
 GET {{StudyASS_HostAddress}}/StudySessions/atdenton@lancashire.ac.uk
+Accept: application/json
+
+###
+
+GET {{StudyASS_HostAddress}}/StudySessions
 Accept: application/json
 
 ###

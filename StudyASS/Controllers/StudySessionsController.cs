@@ -16,12 +16,13 @@ namespace StudyASS.Controllers
             _databaseParser = databaseParser;
         }
 
-        //// GET: api/<ValuesController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        // GET: <StudySessionsController>
+        [HttpGet]
+        public IEnumerable<IStudySession> Get()
+        {
+            Console.WriteLine($"GET: /StudySessions");
+            return _databaseParser.GetStudySessions();
+        }
 
         // GET <StudySessionsController>/atdenton@lancashire.ac.uk
         [HttpGet("{studentEmail}")]

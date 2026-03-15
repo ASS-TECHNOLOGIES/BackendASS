@@ -1,3 +1,4 @@
+using StudyASS.Builders;
 using StudyASS.Factories;
 using StudyASS.Interfaces;
 using StudyASS.Parsers;
@@ -17,8 +18,10 @@ namespace StudyASS
             builder.Services.AddOpenApi();
 
             // Register extra objects
+            builder.Services.AddSingleton<IStudentFactory, StudentFactory>();
             builder.Services.AddSingleton<IStudySessionFactory, StudySessionFactory>();
-            builder.Services.AddSingleton<IDatabaseParser, ConsoleOutputter>();
+            builder.Services.AddSingleton<IStudySessionBuilder, StudySessionBuilder>();
+            builder.Services.AddSingleton<IDatabaseParser, SqlParser>();
 
             var app = builder.Build();
 

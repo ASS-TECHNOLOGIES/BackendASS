@@ -19,5 +19,10 @@ namespace StudyASS.Parsers
             }
             Console.WriteLine();
         }
+
+        public IEnumerable<IStudySession> GetStudySessions()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

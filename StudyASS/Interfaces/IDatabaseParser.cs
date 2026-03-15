@@ -10,6 +10,14 @@
         /// <summary>
         /// Gets list of study sessions from database.
         /// </summary>
+        /// <returns>
+        /// Collection of <c>IStudySession</c>.
+        /// </returns>
+        IEnumerable<IStudySession> GetStudySessions();
+
+        /// <summary>
+        /// Gets list of study sessions from database.
+        /// </summary>
         /// <param name="studentEmail">
         /// Student email to filter study sessions with.
         /// </param>
