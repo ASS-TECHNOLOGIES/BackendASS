@@ -65,6 +65,8 @@ namespace StudyASS.Controllers
             Console.WriteLine($"GET: /StudySessions/{studentEmail} received.");
             return _databaseParser.GetStudySessions(studentEmail);
         }
+
+        #endregion
     }
 }
 

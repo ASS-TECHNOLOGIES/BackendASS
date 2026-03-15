@@ -141,5 +141,7 @@ namespace StudyASS.Parsers
                 command.ExecuteNonQuery();
             }
         }
+
+        #endregion
     }
 }

@@ -38,19 +38,6 @@ namespace StudyASS.Controllers
         #region Endpoints
 
         /// <summary>
-        /// GET <RegisterStudentController>
-        /// </summary>
-        /// <returns>
-        /// Collection of student registrations.
-        /// </returns>
-        [HttpGet]
-        public IEnumerable<IRegistration> Get()
-        {
-            Console.WriteLine($"GET: /RegisterStudent");
-            return _databaseParser.GetRegistrations();
-        }
-
-        /// <summary>
         /// POST <RegisterStudentController>.
         /// Handles request to add student register for study support session.
         /// </summary>
