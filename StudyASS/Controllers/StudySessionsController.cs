@@ -5,18 +5,42 @@ using StudyASS.Interfaces;
 
 namespace StudyASS.Controllers
 {
+    /// <summary>
+    /// Controller for StudySession endpoints.
+    /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class StudySessionsController : ControllerBase
     {
+        #region Private Properties
+
         private IDatabaseParser _databaseParser;
 
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
+        /// <param name="databaseParser">
+        /// Reference to database parser for accessing data store.
+        /// </param>
         public StudySessionsController(IDatabaseParser databaseParser) : base()
         {
             _databaseParser = databaseParser;
         }
 
-        // GET: <StudySessionsController>
+        #endregion
+
+        #region 
+
+        /// <summary>
+        /// GET <StudySessionsController>
+        /// </summary>
+        /// <returns>
+        /// Collection of study sessions.
+        /// </returns>
         [HttpGet]
         public IEnumerable<IStudySession> Get()
         {
@@ -24,7 +48,16 @@ namespace StudyASS.Controllers
             return _databaseParser.GetStudySessions();
         }
 
-        // GET <StudySessionsController>/atdenton@lancashire.ac.uk
+        /// <summary>
+        /// GET <StudySessionsController>/student email.
+        /// e.g. StudySessions/atdenton@lancashire.ac.uk
+        /// </summary>
+        /// <param name="studentEmail">
+        /// Email of student to filter study sessions by.
+        /// </param>
+        /// <returns>
+        /// Collection of study sessions.
+        /// </returns>
         [HttpGet("{studentEmail}")]
         public IEnumerable<IStudySession> Get(string studentEmail)
         {

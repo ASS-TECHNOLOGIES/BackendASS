@@ -18,6 +18,15 @@ namespace StudyASS.Models
 
         #region Constructor
 
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
+        /// <param name="name">
+        /// Student name.
+        /// </param>
+        /// <param name="email">
+        /// Student email.
+        /// </param>
         public Student(string name, string email)
         {
             _name = name;

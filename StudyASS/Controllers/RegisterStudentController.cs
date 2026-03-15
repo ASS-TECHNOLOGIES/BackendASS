@@ -7,23 +7,63 @@ using System.Runtime.Intrinsics.Arm;
 
 namespace StudyASS.Controllers
 {
+    /// <summary>
+    /// Controller for RegisterStudent endpoints.
+    /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class RegisterStudentController : ControllerBase
     {
+        #region Private Properties
+
         private IDatabaseParser _databaseParser;
 
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
+        /// <param name="databaseParser">
+        /// Reference to database parser for accessing data store.
+        /// </param>
         public RegisterStudentController(IDatabaseParser databaseParser) : base()
         {
             _databaseParser = databaseParser;
         }
 
-        // POST <RegisterStudentController>
+        #endregion
+
+        #region Endpoints
+
+        /// <summary>
+        /// GET <RegisterStudentController>
+        /// </summary>
+        /// <returns>
+        /// Collection of student registrations.
+        /// </returns>
+        [HttpGet]
+        public IEnumerable<IRegistration> Get()
+        {
+            Console.WriteLine($"GET: /RegisterStudent");
+            return _databaseParser.GetRegistrations();
+        }
+
+        /// <summary>
+        /// POST <RegisterStudentController>.
+        /// Handles request to add student register for study support session.
+        /// </summary>
+        /// <param name="value">
+        /// Student Registration data.
+        /// </param>
         [HttpPost]
         public void Post([FromBody] StudentRegistration value)
         {
             Console.WriteLine("POST: /RegisterStudent received.");
             _databaseParser.AddRegistration(value);
         }
+
+        #endregion
     }
 }

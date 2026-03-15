@@ -1,18 +1,25 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using StudyASS.Interfaces;
-using System.Data;
-using System.Xml.Linq;
 
 namespace StudyASS.Parsers
 {
+    /// <summary>
+    /// SQL based implementation of <c>IDatabaseParser</c>.
+    /// </summary>
     public class SqlParser : IDatabaseParser
     {
+        
+        #region Private Properties
         private MySqlConnection _connection;
 
         private IStudentFactory _studentFactory;
         private IStudySessionFactory _studySessionFactory;
         private IStudySessionBuilder _studySessionBuilder;
+
+        #endregion
+
+        #region Class Constructor
+
 
         public SqlParser(IStudentFactory studentFactory, IStudySessionFactory studySessionFactory, IStudySessionBuilder studySessionBuilder)
         {

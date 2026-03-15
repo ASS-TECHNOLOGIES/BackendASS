@@ -16,6 +16,14 @@
         IEnumerable<IStudySession> GetStudySessions();
 
         /// <summary>
+        /// Gets list of student registrations.
+        /// </summary>
+        /// <returns>
+        /// Collection of <c>IStudySession</c>.
+        /// </returns>
+        IEnumerable<IRegistration> GetRegistrations();
+
+        /// <summary>
         /// Gets list of study sessions from database.
         /// </summary>
         /// <param name="studentEmail">

@@ -19,6 +19,12 @@ namespace StudyASS.Models
 
         #region Constructor
 
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="module"></param>
+        /// <param name="topic"></param>
         public StudySession(DateTime dateTime, string module, string topic)
         {
             _dateTime = dateTime;
